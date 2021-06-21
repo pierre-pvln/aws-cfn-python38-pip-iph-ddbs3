@@ -11,7 +11,7 @@ su ubuntu
 # ==============
 # get requirements.txt file from repository
 #wget -O /home/ubuntu/requirements.txt "https://raw.githubusercontent.com/pierre-pvln/aws-cfn-python38-pip-iph-v2/master/requirements.txt"
-aws s3 cp s3://iph-code-repository/json-to-csv/code/app/requirements.txt /home/ubuntu/requirements.txt
+aws s3 cp s3://iph-code-repository/ddbs3-to-csv/code/app/requirements.txt /home/ubuntu/requirements.txt
 
 echo [INFO ] Installing python ...
 sudo apt-get install python3-pip -y
@@ -39,7 +39,7 @@ if [ ! -d "$DIR" ]; then
   # Take action if $DIR does not exist. #
   mkdir --parents "$DIR"
 fi
-aws s3 cp s3://iph-code-repository/json-to-csv/ /home/ubuntu/json-to-csv --recursive
+aws s3 cp s3://iph-code-repository/ddbs3-to-csv/ /home/ubuntu/ddbs3-to-csv --recursive
 
 cp /home/ubuntu/json-to-csv/run_ec2/run-python-script.sh /home/ubuntu/run-python-script.sh
 
