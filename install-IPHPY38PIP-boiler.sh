@@ -41,7 +41,7 @@ if [ ! -d "$DIR" ]; then
 fi
 aws s3 cp s3://iph-code-repository/ddbs3-to-csv/ /home/ubuntu/ddbs3-to-csv --recursive
 
-cp /home/ubuntu/json-to-csv/run_ec2/run-python-script.sh /home/ubuntu/run-python-script.sh
+cp /home/ubuntu/ddbs3-to-csv/run_ec2/run-python-script.sh /home/ubuntu/run-python-script.sh
 
 # and finalize
 cd /home/ubuntu
