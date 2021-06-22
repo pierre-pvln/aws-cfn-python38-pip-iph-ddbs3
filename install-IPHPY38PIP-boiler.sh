@@ -34,7 +34,7 @@ git clone https://github.com/pierre-pvln/myPolygons.git /home/ubuntu/polygons
 # App Install
 # ===========
 echo [INFO ] Cloning app ...
-DIR="/home/ubuntu/json-to-csv/"
+DIR="/home/ubuntu/ddbs3-to-csv/"
 if [ ! -d "$DIR" ]; then
   # Take action if $DIR does not exist. #
   mkdir --parents "$DIR"
