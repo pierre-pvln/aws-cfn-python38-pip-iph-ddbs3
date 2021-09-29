@@ -85,10 +85,10 @@
             "Default": "",
             "Description": "Local AWS profile name to use for authentication and authorization"
         },
-        "IPHPY38PIPAWSjsonBucketName": {
+        "IPHPY38PIPAWSinputBucketName": {
             "Type": "String",
-            "Default": "ais-datasets-json",
-            "Description": "S3 bucket name with json input files"
+            "Default": "ais-datasets-csv",
+            "Description": "S3 bucket name with csv input files"
         },
         "IPHPY38PIPAWScsvBucketName": {
             "Type": "String",
@@ -158,7 +158,7 @@
                                 "s3:ListBucket"
                             ],
                             "Resource": [
-                                { "Fn::Sub": "arn:aws:s3:::${IPHPY38PIPAWSjsonBucketName}" },
+                                { "Fn::Sub": "arn:aws:s3:::${IPHPY38PIPAWSinputBucketName}" },
                                 { "Fn::Sub": "arn:aws:s3:::${IPHPY38PIPAWScsvBucketName}" },
                                 { "Fn::Sub": "arn:aws:s3:::${IPHPY38PIPAWSpolygonsBucketName}" },
 								"arn:aws:s3:::iph-code-repository"
@@ -170,7 +170,7 @@
                                 "s3:GetObject"
                             ],
                             "Resource": [
-                                { "Fn::Sub": "arn:aws:s3:::${IPHPY38PIPAWSjsonBucketName}/*" },
+                                { "Fn::Sub": "arn:aws:s3:::${IPHPY38PIPAWSinputBucketName}/*" },
                                 { "Fn::Sub": "arn:aws:s3:::${IPHPY38PIPAWScsvBucketName}/*" },
                                 { "Fn::Sub": "arn:aws:s3:::${IPHPY38PIPAWSpolygonsBucketName}/*" },
 								"arn:aws:s3:::iph-code-repository/ddbs3-to-csv/*"

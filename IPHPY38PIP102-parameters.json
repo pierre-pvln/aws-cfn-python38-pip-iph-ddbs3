@@ -20,8 +20,8 @@
     "ParameterValue": ""
   },
   {
-    "ParameterKey": "IPHPY38PIPAWSjsonBucketName",
-    "ParameterValue": "ais-datasets-json"
+    "ParameterKey": "IPHPY38PIPAWSinputBucketName",
+    "ParameterValue": "ais-datasets-csv"
   },
   {
     "ParameterKey": "IPHPY38PIPAWScsvBucketName",
