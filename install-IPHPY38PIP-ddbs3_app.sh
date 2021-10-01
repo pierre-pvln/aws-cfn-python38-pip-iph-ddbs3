@@ -3,7 +3,7 @@
 # boilerplate install script
 #
 cd /home/ubuntu
-touch $(date '+%Y-%m-%d_%H-%M-%S')_start_of_install_boilerplate
+touch $(date '+%Y-%m-%d_%H-%M-%S')_start_of_install_ddbs3_app
 
 su ubuntu
 
@@ -14,10 +14,7 @@ su ubuntu
 #wget -O /home/ubuntu/requirements.txt "https://raw.githubusercontent.com/pierre-pvln/ddbs3-to-csv_vandenHerik/master/code/app/requirements.txt
 aws s3 cp s3://iph-code-repository/ddbs3-to-csv/code/app/requirements.txt /home/ubuntu/requirements.txt
 
-echo [INFO ] Installing python ...
-sudo apt-get install python3-pip -y
-sudo apt-get install python3-venv -y
-python3 -m pip install --user --upgrade pip
+echo [INFO ] Installing python app ...
 python3 -m venv env
 source env/bin/activate
 python3 -m pip install -r /home/ubuntu/requirements.txt
@@ -37,7 +34,7 @@ git clone https://github.com/pierre-pvln/myPolygons.git /home/ubuntu/polygons
 echo [INFO ] Cloning app ...
 DIR="/home/ubuntu/ddbs3-to-csv/"
 if [ ! -d "$DIR" ]; then
-  # Take action if $DIR does not exist. #
+  # if $DIR does not exist.
   mkdir --parents "$DIR"
 fi
 aws s3 cp s3://iph-code-repository/ddbs3-to-csv/ /home/ubuntu/ddbs3-to-csv --recursive
@@ -48,4 +45,4 @@ cp /home/ubuntu/ddbs3-to-csv/run_ec2/run-python-script.sh /home/ubuntu/run-pytho
 cd /home/ubuntu
 chmod +x /home/ubuntu/*.sh
 
-touch $(date '+%Y-%m-%d_%H-%M-%S')_end_of_install
+touch $(date '+%Y-%m-%d_%H-%M-%S')_end_of_install_ddbs3_app
