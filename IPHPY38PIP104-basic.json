@@ -100,16 +100,6 @@
             "Default": "ais-datasets-polygons",
             "Description": "S3 bucket name with polygon input files"
         },
-        "IPHPY38PIPENVAWSSettingsBucketName": {
-            "Type": "String",
-            "Default": "",
-            "Description": "S3 bucket name with settings"
-        },
-        "IPHPY38PIPENVAWSSettingsPrefixFilename": {
-            "Type": "String",
-            "Default": "settings/settings.json",
-            "Description": "Settings filename including prefix/path in S3 bucket"
-        },
         "IPHPY38PIPENVAPPDateType": {
             "Type": "String",
             "Default": "leading0",
@@ -289,19 +279,17 @@
                                 "touch /home/ubuntu/$( date '+%Y-%m-%d_%H-%M-%S' )_start_of_UserData\n",
                                 "#setting environment variables\n",
                                 { "Fn::Sub": "AWS_PROFILE_NAME=${IPHPY38PIPENVAWSProfileName}\n" },
-                                { "Fn::Sub": "AWS_SETTINGS_BUCKET=${IPHPY38PIPENVAWSSettingsBucketName}\n" },
-                                { "Fn::Sub": "AWS_SETTINGS_PATH=${IPHPY38PIPENVAWSSettingsPrefixFilename}\n" },
                                 { "Fn::Sub": "APP_DATE_TYPE=${IPHPY38PIPENVAPPDateType}\n" },
                                 "echo \"AWS_PROFILE_NAME=$AWS_PROFILE_NAME\" >>/etc/environment\n",
-                                "echo \"AWS_SETTINGS_BUCKET=$AWS_SETTINGS_BUCKET\" >>/etc/environment\n",
-                                "echo \"AWS_SETTINGS_PATH=$AWS_SETTINGS_PATH\" >>/etc/environment\n",
                                 "echo \"APP_DATE_TYPE=$APP_DATE_TYPE\" >>/etc/environment\n",
                                 "sudo apt-get update\n",
                                 "sudo apt-get upgrade -y\n",
                                 "sudo apt-get install awscli -y\n",
-								"wget -O /home/ubuntu/install.sh \"https://raw.githubusercontent.com/pierre-pvln/aws-cfn-python38-pip-iph-ddbs3/master/install-IPHPY38PIP-boiler.sh\"\n",
+								"wget -O /home/ubuntu/install_boiler.sh \"https://raw.githubusercontent.com/pierre-pvln/aws-cfn-python38-pip-iph-ddbs3/master/install-IPHPY38PIP-boiler.sh\"\n",
+                                "wget -O /home/ubuntu/install_app.sh \"https://raw.githubusercontent.com/pierre-pvln/aws-cfn-python38-pip-iph-ddbs3/master/install-IPHPY38PIP-ddbs3_app.sh\"\n",
                                 "chmod +x /home/ubuntu/*.sh\n",
-                                "/home/ubuntu/install.sh\n",
+                                "/home/ubuntu/install_boiler.sh\n",
+                                "/home/ubuntu/install_app.sh\n",
                                 "chown -R ubuntu:ubuntu /home/ubuntu/\n",
                                 "touch /home/ubuntu/$( date '+%Y-%m-%d_%H-%M-%S' )_end_of_UserData\n"
                             ]
