@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 #
-# boilerplate install script
+# python app install script
 #
 cd /home/ubuntu
 touch $(date '+%Y-%m-%d_%H-%M-%S')_start_of_install_ddbs3_app
 
 su ubuntu
 
-# Python Install
-# ==============
+# Python App Install
+# ==================
 # get requirements.txt file from repository
 # as it is a private repository we get it from s3
 #wget -O /home/ubuntu/requirements.txt "https://raw.githubusercontent.com/pierre-pvln/ddbs3-to-csv_vandenHerik/master/code/app/requirements.txt
