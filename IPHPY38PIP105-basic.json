@@ -151,7 +151,8 @@
                                 { "Fn::Sub": "arn:aws:s3:::${IPHPY38PIPAWSinputBucketName}" },
                                 { "Fn::Sub": "arn:aws:s3:::${IPHPY38PIPAWScsvBucketName}" },
                                 { "Fn::Sub": "arn:aws:s3:::${IPHPY38PIPAWSpolygonsBucketName}" },
-								"arn:aws:s3:::iph-code-repository"
+								"arn:aws:s3:::iph-code-repository",
+								"arn:aws:s3:::dashboard-csvs"
                             ]
                         },
                         {
@@ -164,6 +165,8 @@
                                 { "Fn::Sub": "arn:aws:s3:::${IPHPY38PIPAWScsvBucketName}/*" },
                                 { "Fn::Sub": "arn:aws:s3:::${IPHPY38PIPAWSpolygonsBucketName}/*" },
 								"arn:aws:s3:::iph-code-repository/ddbs3-to-csv/*"
+								"arn:aws:s3:::dashboard-csvs/*"
+
                             ]
                         },
                         {
@@ -172,7 +175,8 @@
                                 "s3:PutObject"
                             ],
                             "Resource": [
-                                { "Fn::Sub": "arn:aws:s3:::${IPHPY38PIPAWScsvBucketName}/*" }
+                                { "Fn::Sub": "arn:aws:s3:::${IPHPY38PIPAWScsvBucketName}/*" },
+								"arn:aws:s3:::dashboard-csvs/*"
                             ]
                         },
 						                        {
@@ -181,7 +185,8 @@
                                 "s3:DeleteObject"
                             ],
                             "Resource": [
-                                { "Fn::Sub": "arn:aws:s3:::${IPHPY38PIPAWScsvBucketName}/*" }
+                                { "Fn::Sub": "arn:aws:s3:::${IPHPY38PIPAWScsvBucketName}/*" },
+								"arn:aws:s3:::dashboard-csvs/*"
                             ]
                         }
                     ]
