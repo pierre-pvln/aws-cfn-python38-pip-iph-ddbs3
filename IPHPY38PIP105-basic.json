@@ -289,7 +289,7 @@
                                 "sudo apt-get update\n",
                                 "sudo apt-get upgrade -y\n",
                                 "sudo apt-get install awscli -y\n",
-								"wget -O /home/ubuntu/install_boiler.sh \"https://raw.githubusercontent.com/pierre-pvln/aws-cfn-python38-pip-iph-ddbs3/master/install-IPHPY38PIP-boiler.sh\"\n",
+								"wget -O /home/ubuntu/install_boiler.sh \"https://raw.githubusercontent.com/pierre-pvln/aws-cfn-python38-pip-iph-ddbs3/master/install-IPHPY38PIP-python-boiler.sh\"\n",
                                 "wget -O /home/ubuntu/install_app.sh \"https://raw.githubusercontent.com/pierre-pvln/aws-cfn-python38-pip-iph-ddbs3/master/install-IPHPY38PIP-ddbs3_app.sh\"\n",
                                 "chmod +x /home/ubuntu/*.sh\n",
                                 "/home/ubuntu/install_boiler.sh\n",
