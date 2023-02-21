@@ -341,7 +341,21 @@
                     "FromPort": "22",
                     "ToPort": "22",
                     "CidrIp": "86.81.35.18/32",
-                    "Description": "SSH direct from homenetwork"
+                    "Description": "SSH direct from homenetwork old KPN"
+                },
+				{
+                    "IpProtocol": "tcp",
+                    "FromPort": "22",
+                    "ToPort": "22",
+                    "CidrIp": "89.32.240.0/21",
+                    "Description": "SSH direct from TriNed NL-TRINED-20051129"
+                },
+				{
+                    "IpProtocol": "tcp",
+                    "FromPort": "22",
+                    "ToPort": "22",
+                    "CidrIp": "109.232.44.0/28",
+                    "Description": "SSH direct from Gemeente Stein IP subnet OpenLine"
                 }],
                 "VpcId": {
                     "Ref": "IPHPY38PIPMainVPC"
